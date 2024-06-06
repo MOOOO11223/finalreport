@@ -1,0 +1,21 @@
+<!-- templates/teacher.html -->
+{% extends 'base.html' %}
+{% block title %}Teacher Dashboard{% endblock %}
+{% block content %}
+<h1>Teacher Dashboard</h1>
+<form method="post">
+    <label for="dataset_name">Dataset Name</label>
+    <input type="text" id="dataset_name" name="dataset_name" required>
+    <label for="training_data_path">Training Data Path</label>
+    <input type="text" id="training_data_path" name="training_data_path" required>
+    <label for="validation_data_path">Validation Data Path</label>
+    <input type="text" id="validation_data_path" name="validation_data_path" required>
+    <button type="submit">Upload Dataset</button>
+</form>
+<h2>Your Datasets</h2>
+<ul>
+    {% for dataset in datasets %}
+        <li>{{ dataset.DatasetName }}</li>
+    {% endfor %}
+</ul>
+{% endblock %}

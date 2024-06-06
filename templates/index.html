@@ -1,0 +1,13 @@
+<!-- templates/index.html -->
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<h1>Welcome to the Model Scoring System</h1>
+{% if session.get('user_id') %}
+    {% if session.get('user_type') == 'Teacher' %}
+        <a href="{{ url_for('teacher_dashboard') }}">Teacher Dashboard</a>
+    {% elif session.get('user_type') == 'Student' %}
+        <a href="{{ url_for('student_dashboard') }}">Student Dashboard</a>
+    {% endif %}
+{% endif %}
+{% endblock %}

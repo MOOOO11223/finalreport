@@ -1,0 +1,19 @@
+<!-- templates/student.html -->
+{% extends 'base.html' %}
+{% block title %}Student Dashboard{% endblock %}
+{% block content %}
+<h1>Student Dashboard</h1>
+<form method="post">
+    <label for="model_name">Model Name</label>
+    <input type="text" id="model_name" name="model_name" required>
+    <label for="dataset_id">Dataset</label>
+    <select id="dataset_id" name="dataset_id">
+        {% for dataset in datasets %}
+            <option value="{{ dataset.DatasetID }}">{{ dataset.DatasetName }}</option>
+        {% endfor %}
+    </select>
+    <label for="model_path">Model Path</label>
+    <input type="text" id="model_path" name="model_path" required>
+    <button type="submit">Upload Model</button>
+</form>
+{% endblock %}

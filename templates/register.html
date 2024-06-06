@@ -1,0 +1,18 @@
+<!-- templates/register.html -->
+{% extends 'base.html' %}
+{% block title %}Register{% endblock %}
+{% block content %}
+<h1>Register</h1>
+<form method="post">
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username" required>
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" required>
+    <label for="user_type">User Type</label>
+    <select id="user_type" name="user_type">
+        <option value="Teacher">Teacher</option>
+        <option value="Student">Student</option>
+    </select>
+    <button type="submit">Register</button>
+</form>
+{% endblock %}
