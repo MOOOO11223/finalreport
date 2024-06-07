@@ -13,8 +13,8 @@
         {% if session.get('user_id') %}
             <a href="{{ url_for('logout') }}">Logout</a>
         {% else %}
-            <a href="{{ url_for('login') }}">Login</a>
-            <a href="{{ url_for('register') }}">Register</a>
+           <!-- <a href="{{ url_for('login') }}">Login</a>
+            <a href="{{ url_for('register') }}">Register</a>-->
         {% endif %}
     </nav>
     {% with messages = get_flashed_messages(with_categories=true) %}
